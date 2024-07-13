@@ -31,3 +31,8 @@ body {
     text-wrap: balance;
   }
 }
+
+@font-face {
+  font-family: "NewWildWord";
+  src: url("../../public/fonts/New_Wild_Words.TTF");
+}
