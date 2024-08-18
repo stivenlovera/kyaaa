@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import "../globals.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 
+
 config.autoAddCss = false;
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,14 +15,14 @@ export const metadata: Metadata = {
 
 export default function Layout({ children }: { children: React.ReactNode }) {
     return (
-        <html lang="es" className="">
-            <body className={`${inter.className} bg-gray-200 dark:bg-gray-950`}>
+        <html lang="es" className="dark">
+            <body className={`${inter.className}`}>
                 <Menu />
-                <div className="md:mx-auto p-4  bg-gray-200 dark:bg-neutral-950">
+                <div className="md:mx-auto p-4 bg-white dark:bg-neutral-950">
                     {children}
 
                 </div>
-                <footer className="dark:bg-gray-900 p-4">
+                <footer className="dark:bg-gray-900 p-4 bg-gray-200 text-slate-950 dark:text-slate-50 ">
                     footer
                 </footer>
             </body>

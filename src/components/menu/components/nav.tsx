@@ -4,8 +4,7 @@ import Image from 'next/image'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faMagnifyingGlass,
-    faBars,
-
+    faBars
 } from "@fortawesome/free-solid-svg-icons";
 import {
     faMoon,
@@ -13,13 +12,15 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 import { Search } from './search';
 import Link from 'next/link';
+import { ListMenu } from '../menu';
 
 interface NavProps {
     onPress: (open: boolean) => void
+    listMenu: ListMenu[]
 }
 
-const Nav = ({ onPress }: NavProps) => {
-    const [modeDark, setModeDark] = useState(false)
+const Nav = ({ onPress, listMenu }: NavProps) => {
+    const [modeDark, setModeDark] = useState(true)
     const [search, setSearch] = useState<string>('')
 
     const enviar = () => {
@@ -30,7 +31,7 @@ const Nav = ({ onPress }: NavProps) => {
     }, [modeDark])
 
     return (
-        <nav className="sticky top-0 bg-gray-100 border-gray-200 dark:bg-gray-900" >
+        <nav className="sticky top-0 bg-gray-200 border-gray-200 dark:bg-gray-800" >
             <div className='flex justify-between'>
                 <Link href={"/"} className='flex justify-start space-x-2 p-2'>
                     <Image
@@ -83,35 +84,17 @@ const Nav = ({ onPress }: NavProps) => {
                                     />
                                 </button>
                             </li>
-                            <li>
-                                <Link href="/etiquetas" className="block p-2 hover:text-red-500 dark:hover:text-red-500 dark:text-white text-black ">Etiquetas</Link>
-                            </li>
-                            <li>
-                                <a href="#" className="block p-2 hover:text-red-500 dark:hover:text-red-500 dark:text-white text-black">Artistas</a>
-                            </li>
-                            <li>
-                                <a href="#" className="block p-2 hover:text-red-500 dark:hover:text-red-500 dark:text-white text-black ">Serie
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="block p-2 hover:text-red-500 dark:hover:text-red-500 dark:text-white text-black">Personajes
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="block p-2 hover:text-red-500 dark:hover:text-red-500 dark:text-white text-black">Idioma
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="block p-2 hover:text-red-500 dark:hover:text-red-500 dark:text-white text-black">Categoria
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="block p-2 hover:text-red-500 dark:hover:text-red-500 dark:text-white text-black ">Favoritos
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="block p-2 hover:text-red-500 dark:hover:text-red-500 dark:text-white text-black">Notificaciones</a>
-                            </li>
+                            {
+                                listMenu.map((menu, i) => {
+                                    return (
+                                        <li key={i}>
+                                            <Link href={menu.url} className="block p-2 hover:text-red-500 dark:hover:text-red-500 dark:text-white text-black ">
+                                                {menu.name}
+                                            </Link>
+                                        </li>
+                                    )
+                                })
+                            }
                             <li>
                                 <a
                                     href="#"

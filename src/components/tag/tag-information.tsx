@@ -1,18 +1,24 @@
+import Link from 'next/link'
 import React from 'react'
 
-interface TagInformationProps {
+export interface TagInformationProps {
     value: string,
-    quantity: number
+    quantity: number,
+    url: string
 }
-export const TagInformation = ({ quantity, value }: TagInformationProps) => {
+
+export const TagInformation = ({ quantity, value, url }: TagInformationProps) => {
     return (
-        <div className='flex'>
-            <div className='rounded-l bg-gray-50 dark:bg-gray-700 p-1 dark:text-gray-100 text-gray-950 '>
+        <Link
+            className='flex'
+            href={url}
+        >
+            <div className='rounded-l bg-gray-200 dark:bg-gray-700 p-1 dark:text-gray-100 text-gray-950 text-sm'>
                 {value}
             </div>
-            <div className='border-l-2 dark:border-black border-transparent rounded-r bg-gray-300 dark:bg-gray-800 p-1 dark:text-gray-100  text-gray-950'>
+            <div className='border-l-2 dark:border-black border-transparent rounded-r bg-gray-300 dark:bg-gray-800 p-1 dark:text-gray-100  text-gray-950 text-sm'>
                 {quantity}
             </div>
-        </div>
+        </Link>
     )
 }
