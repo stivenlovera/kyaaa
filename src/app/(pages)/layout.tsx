@@ -16,13 +16,12 @@ export const metadata: Metadata = {
 export default function Layout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="es" className="dark">
-            <body className={`${inter.className}`}>
+            <body className={`${inter.className} `}>
                 <Menu />
-                <div className="md:mx-auto p-4 bg-white dark:bg-neutral-950">
+                <div className="md:mx-auto p-4 bg-white dark:bg-neutral-950" style={{minHeight:'100vh'}}>
                     {children}
-
                 </div>
-                <footer className="dark:bg-gray-900 p-4 bg-gray-200 text-slate-950 dark:text-slate-50 ">
+                <footer className="dark:bg-gray-900 p-4 bg-gray-200 text-slate-950 dark:text-slate-50">
                     footer
                 </footer>
             </body>

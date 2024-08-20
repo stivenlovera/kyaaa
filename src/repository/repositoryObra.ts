@@ -1,6 +1,9 @@
-import { AppDataSource } from "@/config/database";
+
+import { logger } from "@/config/logger";
 import { Obra } from "@/entities/obra.entity";
-import { ObjectLiteral } from "typeorm";
+import { convertJson } from "@/utils/convertes";
+import { MongoClient } from "mongodb";
+import { DataSource, ObjectLiteral } from "typeorm";
 
 type Paginate = {
     data: Obra[]
@@ -13,13 +16,15 @@ type CreateAgregationProps = {
     match?: ObjectLiteral
     skip?: number
 }
-class RepositoryObra {
-    constructor() {
+export class RepositoryObra {
+    dataSource: DataSource;
 
+    constructor(_dataSource: DataSource) {
+        this.dataSource = _dataSource
     }
+
     async GetPaginate(etiqueta: string, entity: string, take: number, skip: number): Promise<Paginate> {
-        await AppDataSource.initialize();
-        const [result, total] = await AppDataSource.getRepository(Obra).findAndCount(
+        const [result, total] = await this.dataSource.getRepository(Obra).findAndCount(
             {
                 where: {
                     'etiquetas': {
@@ -30,7 +35,6 @@ class RepositoryObra {
                 skip: skip
             }
         );
-        await AppDataSource.destroy();
         return {
             data: result,
             count: total,
@@ -38,21 +42,18 @@ class RepositoryObra {
     }
 
     async GetOne(code: string): Promise<Obra | null> {
-        await AppDataSource.initialize();
-        const obra = await AppDataSource.getRepository(Obra).findOne(
+        const obra = await this.dataSource.getRepository(Obra).findOne(
             {
                 where: {
                     codigo: code
                 }
             }
         );
-        await AppDataSource.destroy();
         return obra;
     }
-
+ 
     async Paginate(take: number, skip: number): Promise<Paginate> {
-        await AppDataSource.initialize();
-        const [result, total] = await AppDataSource.getRepository(Obra).findAndCount(
+        const [result, total] = await this.dataSource.getRepository(Obra).findAndCount(
             {
                 where: {
                     //fecha:Between(moment('2021-03-08').startOf('day').toDate(),moment('2021-12-08').startOf('day').toDate())
@@ -62,8 +63,7 @@ class RepositoryObra {
                 skip: skip
             }
         );
-        await AppDataSource.destroy();
-
+        
         return {
             data: result,
             count: total,
@@ -71,16 +71,14 @@ class RepositoryObra {
     }
 
     async GetCountGroupAgregate(agregate: ObjectLiteral[]): Promise<Obra[]> {
-        await AppDataSource.initialize();
-        const obras = await AppDataSource.getMongoRepository(Obra).aggregateEntity(agregate).toArray();
-        await AppDataSource.destroy();
+        logger.info(`GetCountGroupAgregate ${convertJson(agregate)}`)
+        const obras = await this.dataSource.getMongoRepository(Obra).aggregate(agregate).toArray();
         return obras;
     }
 
     async GetCountGroupAgregatePaginate(agregate: ObjectLiteral[]): Promise<Paginate> {
-        await AppDataSource.initialize();
-        const obras = await AppDataSource.getMongoRepository(Obra).aggregateEntity(agregate).toArray();
-        await AppDataSource.destroy();
+        logger.info(`GetCountGroupAgregatePaginate ${convertJson(agregate)}`)
+        const obras = await this.dataSource.getMongoRepository(Obra).aggregate(agregate).toArray();
         return {
             data: obras,
             count: obras.length,
@@ -129,4 +127,4 @@ class RepositoryObra {
         ]
     }
 }
-export const repositoryObra = new RepositoryObra();
+

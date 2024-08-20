@@ -8,9 +8,8 @@ import { Tipo } from "./tipo.entity";
 import { Etiqueta } from "./etiqueta.entity";
 import { Artista } from "./artista.entity";
 
-
 @Entity({ name: 'obra' })
-export class Obra {
+export class Obra extends BaseEntity {
     @ObjectIdColumn()
     id?: ObjectId;
 

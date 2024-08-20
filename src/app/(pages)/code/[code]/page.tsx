@@ -1,5 +1,6 @@
 import { CardInformation } from "@/components/card-information/card-information";
-import { repositoryObra } from "@/repository/repositoryObra";
+import { getDBConnection } from "@/config/database";
+import { RepositoryObra } from "@/repository/repositoryObra";
 import Link from "next/link";
 
 export default async function CodePage({
@@ -9,6 +10,9 @@ export default async function CodePage({
   params: { code: string };
   searchParams: { page: string };
 }) {
+  const connect = await getDBConnection();
+
+  const repositoryObra = new RepositoryObra(connect);
   const obra = await repositoryObra.GetOne(params.code);
 
   const groupArtists = obra!.artistas.map((artist) => artist.nombre)
@@ -106,7 +110,6 @@ export default async function CodePage({
     }
   })
 
-
   const languages = await repositoryObra.GetCountGroupAgregate(repositoryObra.CreateAgregation({
     entity: 'lenguaje',
     field: 'nombre',
@@ -143,6 +146,7 @@ export default async function CodePage({
     }
   })
 
+
   return (
     <>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4">
@@ -163,21 +167,25 @@ export default async function CodePage({
         />
       </div>
       <br />
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 bg-gray-50 dark:bg-gray-900">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 bg-gray-50 dark:bg-neutral-900">
         {
           obra!.paginas.map((page, i) => {
             return (
-              <Link
+              <div
+                className="flex p-2 items-start justify-center w-full"
                 key={i}
-                href={`/code/${obra?.codigo}/${page.numero}`}
-                className="dark:bg-slate-900 flex p-2 items-start justify-center w-full"
               >
-                <img
-                  className='w-auto'
-                  alt='preview'
-                  src={`${process.env.FILE_URL_ORIGINAL}${page.url_original}`}
-                />
-              </Link>
+                <Link
+                  href={`/code/${obra?.codigo}/${page.numero}`}
+                  className=""
+                >
+                  <img
+                    className='w-auto'
+                    alt='preview'
+                    src={`${process.env.FILE_URL_ORIGINAL}${page.url_original}`}
+                  />
+                </Link>
+              </div>
             )
           })
         }

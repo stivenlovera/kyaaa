@@ -5,17 +5,22 @@ interface CardImagenProp {
     url: string
     urlImagen: string
 }
+  
 export const CardImagen = ({ url, urlImagen }: CardImagenProp) => {
     return (
-        <Link
-            href={url}
-            className="bg-gray-50 dark:bg-gray-900 flex items-center justify-end"
+        <div
+            className="bg-gray-50 dark:bg-neutral-900 flex items-center justify-end"
         >
-            <img
-                className='w-96 p-4'
-                alt='preview'
-                src={urlImagen}
-            />
-        </Link>
+            <Link
+                href={url}
+                className=""
+            >
+                <img
+                    className='w-96 p-4'
+                    alt='preview'
+                    src={urlImagen}
+                />
+            </Link>
+        </div>
     )
 }

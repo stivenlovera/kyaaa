@@ -1,5 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn, BaseEntity, ObjectIdColumn, ObjectId } from "typeorm";
-
+          
 @Entity({ name: 'pagina' })
 export class Pagina {
     @ObjectIdColumn()

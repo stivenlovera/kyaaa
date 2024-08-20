@@ -31,7 +31,7 @@ const Nav = ({ onPress, listMenu }: NavProps) => {
     }, [modeDark])
 
     return (
-        <nav className="sticky top-0 bg-gray-200 border-gray-200 dark:bg-gray-800" >
+        <nav className="sticky top-0 bg-gray-200 border-gray-200 dark:bg-gray-900" >
             <div className='flex justify-between'>
                 <Link href={"/"} className='flex justify-start space-x-2 p-2'>
                     <Image
@@ -88,7 +88,10 @@ const Nav = ({ onPress, listMenu }: NavProps) => {
                                 listMenu.map((menu, i) => {
                                     return (
                                         <li key={i}>
-                                            <Link href={menu.url} className="block p-2 hover:text-red-500 dark:hover:text-red-500 dark:text-white text-black ">
+                                            <Link
+                                                href={menu.url}
+                                                className="block p-2 hover:text-red-500 dark:hover:text-red-500 dark:text-white text-black "
+                                            >
                                                 {menu.name}
                                             </Link>
                                         </li>

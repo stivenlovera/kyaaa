@@ -15,14 +15,15 @@ export interface PaginationProps {
 }
 
 export const PaginationView = ({ page, allPages, code }: PaginationProps) => {
-
     return (<>
         <div className='flex mx-auto flex-wrap items-center justify-center p-2'>
             <SectionPaginationInit
+                pageFirst={`${1}`}
+                pageSecond={`${page - 1}`}
                 limit={1}
                 page={page}
-                iconOne={faAngleLeft}
-                iconTwo={faAnglesLeft}
+                iconFirst={faAngleLeft}
+                iconSecond={faAnglesLeft}
             />
             <div
                 className={`flex items-center justify-center px-2 m-1 rounded-full`}
@@ -30,10 +31,12 @@ export const PaginationView = ({ page, allPages, code }: PaginationProps) => {
                 <p className='text-center pr-3'>{page}</p> de <p className='text-center pl-3'>{allPages.length}</p>
             </div>
             <SectionPaginationFinalize
+                pageFirst={`${page + 1}`}
+                pageSecond={`${allPages.length}`}
                 limit={allPages.length}
                 page={page}
-                iconOne={faAnglesRight}
-                iconTwo={faAngleRight}
+                iconFirst={faAnglesRight}
+                iconSecond={faAngleRight}
             />
         </div>
     </>)
@@ -42,47 +45,49 @@ export const PaginationView = ({ page, allPages, code }: PaginationProps) => {
 interface SectionPaginationProps {
     limit: number
     page: number
-    iconOne: IconProp
-    iconTwo: IconProp
+    pageFirst: string
+    pageSecond: string
+    iconFirst: IconProp
+    iconSecond: IconProp
 }
-export const SectionPaginationInit = ({ limit, page, iconOne, iconTwo }: SectionPaginationProps) => {
-    if (limit == page) {
+export const SectionPaginationInit = ({ limit, page, iconFirst, iconSecond, pageFirst, pageSecond }: SectionPaginationProps) => {
+    if (limit >= page) {
         return (null)
     } else {
         return (<>
-            <Link href={`${1}`} className='flex items-center justify-center px-3 p-2 dark:hover:bg-gray-800 rounded-full'>
+            <Link href={pageFirst} className='flex items-center justify-center px-3 p-2 dark:hover:bg-gray-800 rounded-full'>
                 <FontAwesomeIcon
                     className='text-gray-900 dark:text-white text-xl'
-                    icon={iconTwo}
+                    icon={iconSecond}
                     size='lg'
                 />
             </Link>
-            <Link href={`${page - 1}`} className='flex items-center justify-center px-3 p-2 dark:hover:bg-gray-800 rounded-full'>
+            <Link href={pageSecond} className='flex items-center justify-center px-3 p-2 dark:hover:bg-gray-800 rounded-full'>
                 <FontAwesomeIcon
                     className='text-gray-900 dark:text-white text-xl '
-                    icon={iconOne}
+                    icon={iconFirst}
                     size='lg'
                 />
             </Link>
         </>)
     }
 }
-export const SectionPaginationFinalize = ({ limit, page, iconOne, iconTwo }: SectionPaginationProps) => {
-    if (limit == page) {
+export const SectionPaginationFinalize = ({ limit, page, iconFirst, iconSecond, pageFirst, pageSecond }: SectionPaginationProps) => {
+    if (page >= limit) {
         return (null)
     } else {
         return (<>
-            <Link href={`${page + 1}`} className='flex items-center justify-center px-3 p-2 dark:hover:bg-gray-800 rounded-full'>
+            <Link href={pageFirst} className='flex items-center justify-center px-3 p-2 dark:hover:bg-gray-800 rounded-full'>
                 <FontAwesomeIcon
                     className='text-gray-900 dark:text-white text-xl '
-                    icon={iconTwo}
+                    icon={iconSecond}
                     size='lg'
                 />
             </Link>
-            <Link href={`${limit}`} className='flex items-center justify-center px-3 p-2 dark:hover:bg-gray-800 rounded-full'>
+            <Link href={pageSecond} className='flex items-center justify-center px-3 p-2 dark:hover:bg-gray-800 rounded-full'>
                 <FontAwesomeIcon
                     className='text-gray-900 dark:text-white text-xl '
-                    icon={iconOne}
+                    icon={iconFirst}
                     size='lg'
                 />
             </Link>

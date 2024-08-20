@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import Drawer from "./components/drawer";
 import Nav from "./components/nav";
-import React from 'react'
 
 export interface ListMenu {
     name: string

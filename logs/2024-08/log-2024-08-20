@@ -1,0 +1,5350 @@
+2024-08-20 00:00:04 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$artistas"
+	},
+	{
+		"$group": {
+			"_id": "$artistas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$artistas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"0vv0b"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:00:04 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$personajes"
+	},
+	{
+		"$group": {
+			"_id": "$personajes.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$personajes.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Belphegor"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:00:04 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Anal",
+					"Anal Intercourse",
+					"Collar",
+					"Cowman",
+					"Males Only",
+					"Muscle",
+					"Uncensored",
+					"Variant Set",
+					"Yaoi"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:00:04 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$series"
+	},
+	{
+		"$group": {
+			"_id": "$series.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$series.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Obey Me One Master To Rule Them All"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:00:04 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$grupo"
+	},
+	{
+		"$group": {
+			"_id": "$grupo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$grupo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"N/A"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:00:04 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$lenguaje"
+	},
+	{
+		"$group": {
+			"_id": "$lenguaje.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$lenguaje.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"日本語"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:00:04 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$tipo"
+	},
+	{
+		"$group": {
+			"_id": "$tipo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$tipo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Artist CG"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:00:19 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$artistas"
+	},
+	{
+		"$group": {
+			"_id": "$artistas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$artistas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"0-G"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:00:19 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$personajes"
+	},
+	{
+		"$group": {
+			"_id": "$personajes.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$personajes.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Chino Kafuu",
+					"Rize Tedeza",
+					"Sharo Kirima"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:00:19 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Anal",
+					"C90",
+					"Females Only",
+					"Loli",
+					"Masturbation",
+					"Voyeurism",
+					"Yuri"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:00:19 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$series"
+	},
+	{
+		"$group": {
+			"_id": "$series.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$series.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Gochuumon Wa Usagi Desu Ka"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:00:19 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$grupo"
+	},
+	{
+		"$group": {
+			"_id": "$grupo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$grupo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Pettanko"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:00:19 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$lenguaje"
+	},
+	{
+		"$group": {
+			"_id": "$lenguaje.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$lenguaje.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"日本語"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:00:19 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$tipo"
+	},
+	{
+		"$group": {
+			"_id": "$tipo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$tipo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Doujinshi"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:00:38 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$artistas"
+	},
+	{
+		"$group": {
+			"_id": "$artistas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$artistas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"0-G"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:00:38 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$personajes"
+	},
+	{
+		"$group": {
+			"_id": "$personajes.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$personajes.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Chino Kafuu",
+					"Rize Tedeza",
+					"Sharo Kirima"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:00:38 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Anal",
+					"C90",
+					"Females Only",
+					"Loli",
+					"Masturbation",
+					"Voyeurism",
+					"Yuri"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:00:38 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$series"
+	},
+	{
+		"$group": {
+			"_id": "$series.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$series.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Gochuumon Wa Usagi Desu Ka"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:00:38 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$grupo"
+	},
+	{
+		"$group": {
+			"_id": "$grupo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$grupo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Pettanko"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:00:38 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$lenguaje"
+	},
+	{
+		"$group": {
+			"_id": "$lenguaje.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$lenguaje.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"日本語"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:00:38 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$tipo"
+	},
+	{
+		"$group": {
+			"_id": "$tipo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$tipo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Doujinshi"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:01:01 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$artistas"
+	},
+	{
+		"$group": {
+			"_id": "$artistas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$artistas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"0-G"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:01:01 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$personajes"
+	},
+	{
+		"$group": {
+			"_id": "$personajes.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$personajes.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Chino Kafuu",
+					"Rize Tedeza",
+					"Sharo Kirima"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:01:01 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Anal",
+					"C90",
+					"Females Only",
+					"Loli",
+					"Masturbation",
+					"Voyeurism",
+					"Yuri"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:01:01 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$series"
+	},
+	{
+		"$group": {
+			"_id": "$series.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$series.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Gochuumon Wa Usagi Desu Ka"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:01:01 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$grupo"
+	},
+	{
+		"$group": {
+			"_id": "$grupo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$grupo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Pettanko"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:01:01 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$lenguaje"
+	},
+	{
+		"$group": {
+			"_id": "$lenguaje.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$lenguaje.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"日本語"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:01:01 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$tipo"
+	},
+	{
+		"$group": {
+			"_id": "$tipo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$tipo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Doujinshi"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:01:11 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$artistas"
+	},
+	{
+		"$group": {
+			"_id": "$artistas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$artistas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"0-G"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:01:11 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$personajes"
+	},
+	{
+		"$group": {
+			"_id": "$personajes.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$personajes.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Chino Kafuu",
+					"Rize Tedeza",
+					"Sharo Kirima"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:01:11 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Anal",
+					"C90",
+					"Females Only",
+					"Loli",
+					"Masturbation",
+					"Voyeurism",
+					"Yuri"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:01:11 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$series"
+	},
+	{
+		"$group": {
+			"_id": "$series.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$series.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Gochuumon Wa Usagi Desu Ka"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:01:11 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$grupo"
+	},
+	{
+		"$group": {
+			"_id": "$grupo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$grupo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Pettanko"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:01:11 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$lenguaje"
+	},
+	{
+		"$group": {
+			"_id": "$lenguaje.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$lenguaje.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"日本語"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:01:11 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$tipo"
+	},
+	{
+		"$group": {
+			"_id": "$tipo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$tipo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Doujinshi"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:01:17 [info]: GetCountGroupAgregatePaginate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$regex": "^([0-9.-])"
+			}
+		}
+	}
+]
+2024-08-20 00:01:22 [info]: GetCountGroupAgregatePaginate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$regex": "^([0-9.-])"
+			}
+		}
+	}
+]
+2024-08-20 00:01:27 [info]: GetCountGroupAgregatePaginate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$regex": "^([Dd])"
+			}
+		}
+	}
+]
+2024-08-20 00:01:28 [info]: GetCountGroupAgregatePaginate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$regex": "^([Tt])"
+			}
+		}
+	}
+]
+2024-08-20 00:01:30 [info]: GetCountGroupAgregatePaginate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$regex": "^([Ff])"
+			}
+		}
+	}
+]
+2024-08-20 00:01:30 [info]: GetCountGroupAgregatePaginate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$regex": "^([Ee])"
+			}
+		}
+	}
+]
+2024-08-20 00:01:33 [info]: GetCountGroupAgregatePaginate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$regex": "^([Cc])"
+			}
+		}
+	}
+]
+2024-08-20 00:01:35 [info]: GetCountGroupAgregatePaginate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$regex": "^([Bb])"
+			}
+		}
+	}
+]
+2024-08-20 00:01:36 [info]: GetCountGroupAgregatePaginate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$regex": "^([Dd])"
+			}
+		}
+	}
+]
+2024-08-20 00:01:37 [info]: GetCountGroupAgregatePaginate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$regex": "^([Ee])"
+			}
+		}
+	}
+]
+2024-08-20 00:01:37 [info]: GetCountGroupAgregatePaginate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$regex": "^([Ff])"
+			}
+		}
+	}
+]
+2024-08-20 00:01:52 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$artistas"
+	},
+	{
+		"$group": {
+			"_id": "$artistas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$artistas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"0-G"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:01:52 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$personajes"
+	},
+	{
+		"$group": {
+			"_id": "$personajes.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$personajes.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Chino Kafuu",
+					"Rize Tedeza",
+					"Sharo Kirima"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:01:52 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Anal",
+					"C90",
+					"Females Only",
+					"Loli",
+					"Masturbation",
+					"Voyeurism",
+					"Yuri"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:01:52 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$series"
+	},
+	{
+		"$group": {
+			"_id": "$series.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$series.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Gochuumon Wa Usagi Desu Ka"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:01:52 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$grupo"
+	},
+	{
+		"$group": {
+			"_id": "$grupo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$grupo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Pettanko"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:01:52 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$lenguaje"
+	},
+	{
+		"$group": {
+			"_id": "$lenguaje.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$lenguaje.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"日本語"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:01:52 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$tipo"
+	},
+	{
+		"$group": {
+			"_id": "$tipo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$tipo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Doujinshi"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:03:33 [info]: GetCountGroupAgregatePaginate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$regex": "^([0-9.-])"
+			}
+		}
+	}
+]
+2024-08-20 00:03:46 [info]: GetCountGroupAgregatePaginate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$regex": "^([Bb])"
+			}
+		}
+	}
+]
+2024-08-20 00:03:51 [info]: GetCountGroupAgregatePaginate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$regex": "^([Cc])"
+			}
+		}
+	}
+]
+2024-08-20 00:04:05 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$artistas"
+	},
+	{
+		"$group": {
+			"_id": "$artistas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$artistas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"3e"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:04:05 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$personajes"
+	},
+	{
+		"$group": {
+			"_id": "$personajes.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$personajes.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Madoka Higuchi"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:04:05 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Anal",
+					"Anal Intercourse",
+					"Bbm",
+					"Beauty Mark",
+					"C100",
+					"Dilf",
+					"Double Penetration",
+					"Drugs",
+					"Group",
+					"Mmf Threesome",
+					"MultiWork Series",
+					"Rape",
+					"Rimjob"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:04:05 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$series"
+	},
+	{
+		"$group": {
+			"_id": "$series.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$series.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"The Idolmaster"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:04:05 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$grupo"
+	},
+	{
+		"$group": {
+			"_id": "$grupo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$grupo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"S Shoten"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:04:05 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$lenguaje"
+	},
+	{
+		"$group": {
+			"_id": "$lenguaje.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$lenguaje.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"日本語"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:04:05 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$tipo"
+	},
+	{
+		"$group": {
+			"_id": "$tipo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$tipo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Doujinshi"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:08:13 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$artistas"
+	},
+	{
+		"$group": {
+			"_id": "$artistas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$artistas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"3e"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:08:13 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$personajes"
+	},
+	{
+		"$group": {
+			"_id": "$personajes.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$personajes.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Madoka Higuchi"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:08:13 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Anal",
+					"Anal Intercourse",
+					"Bbm",
+					"Beauty Mark",
+					"C100",
+					"Dilf",
+					"Double Penetration",
+					"Drugs",
+					"Group",
+					"Mmf Threesome",
+					"MultiWork Series",
+					"Rape",
+					"Rimjob"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:08:13 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$series"
+	},
+	{
+		"$group": {
+			"_id": "$series.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$series.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"The Idolmaster"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:08:13 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$grupo"
+	},
+	{
+		"$group": {
+			"_id": "$grupo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$grupo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"S Shoten"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:08:13 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$lenguaje"
+	},
+	{
+		"$group": {
+			"_id": "$lenguaje.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$lenguaje.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"日本語"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:08:13 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$tipo"
+	},
+	{
+		"$group": {
+			"_id": "$tipo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$tipo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Doujinshi"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:09:17 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$artistas"
+	},
+	{
+		"$group": {
+			"_id": "$artistas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$artistas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"3e"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:09:17 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$personajes"
+	},
+	{
+		"$group": {
+			"_id": "$personajes.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$personajes.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Madoka Higuchi"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:09:17 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Anal",
+					"Anal Intercourse",
+					"Bbm",
+					"Beauty Mark",
+					"C100",
+					"Dilf",
+					"Double Penetration",
+					"Drugs",
+					"Group",
+					"Mmf Threesome",
+					"MultiWork Series",
+					"Rape",
+					"Rimjob"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:09:17 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$series"
+	},
+	{
+		"$group": {
+			"_id": "$series.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$series.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"The Idolmaster"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:09:17 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$grupo"
+	},
+	{
+		"$group": {
+			"_id": "$grupo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$grupo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"S Shoten"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:09:17 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$lenguaje"
+	},
+	{
+		"$group": {
+			"_id": "$lenguaje.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$lenguaje.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"日本語"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:09:17 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$tipo"
+	},
+	{
+		"$group": {
+			"_id": "$tipo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$tipo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Doujinshi"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:09:44 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$artistas"
+	},
+	{
+		"$group": {
+			"_id": "$artistas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$artistas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"3e"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:09:44 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$personajes"
+	},
+	{
+		"$group": {
+			"_id": "$personajes.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$personajes.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Madoka Higuchi"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:09:44 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Anal",
+					"Anal Intercourse",
+					"Bbm",
+					"Beauty Mark",
+					"C100",
+					"Dilf",
+					"Double Penetration",
+					"Drugs",
+					"Group",
+					"Mmf Threesome",
+					"MultiWork Series",
+					"Rape",
+					"Rimjob"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:09:44 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$series"
+	},
+	{
+		"$group": {
+			"_id": "$series.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$series.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"The Idolmaster"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:09:44 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$grupo"
+	},
+	{
+		"$group": {
+			"_id": "$grupo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$grupo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"S Shoten"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:09:44 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$lenguaje"
+	},
+	{
+		"$group": {
+			"_id": "$lenguaje.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$lenguaje.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"日本語"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:09:44 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$tipo"
+	},
+	{
+		"$group": {
+			"_id": "$tipo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$tipo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Doujinshi"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:09:57 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$artistas"
+	},
+	{
+		"$group": {
+			"_id": "$artistas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$artistas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"3e"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:09:57 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$personajes"
+	},
+	{
+		"$group": {
+			"_id": "$personajes.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$personajes.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Madoka Higuchi"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:09:57 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Anal",
+					"Anal Intercourse",
+					"Bbm",
+					"Beauty Mark",
+					"C100",
+					"Dilf",
+					"Double Penetration",
+					"Drugs",
+					"Group",
+					"Mmf Threesome",
+					"MultiWork Series",
+					"Rape",
+					"Rimjob"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:09:57 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$series"
+	},
+	{
+		"$group": {
+			"_id": "$series.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$series.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"The Idolmaster"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:09:57 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$grupo"
+	},
+	{
+		"$group": {
+			"_id": "$grupo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$grupo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"S Shoten"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:09:57 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$lenguaje"
+	},
+	{
+		"$group": {
+			"_id": "$lenguaje.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$lenguaje.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"日本語"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:09:57 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$tipo"
+	},
+	{
+		"$group": {
+			"_id": "$tipo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$tipo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Doujinshi"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:10:12 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$artistas"
+	},
+	{
+		"$group": {
+			"_id": "$artistas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$artistas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"3e"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:10:12 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$personajes"
+	},
+	{
+		"$group": {
+			"_id": "$personajes.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$personajes.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Madoka Higuchi"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:10:12 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Anal",
+					"Anal Intercourse",
+					"Bbm",
+					"Beauty Mark",
+					"C100",
+					"Dilf",
+					"Double Penetration",
+					"Drugs",
+					"Group",
+					"Mmf Threesome",
+					"MultiWork Series",
+					"Rape",
+					"Rimjob"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:10:12 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$series"
+	},
+	{
+		"$group": {
+			"_id": "$series.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$series.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"The Idolmaster"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:10:12 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$grupo"
+	},
+	{
+		"$group": {
+			"_id": "$grupo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$grupo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"S Shoten"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:10:12 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$lenguaje"
+	},
+	{
+		"$group": {
+			"_id": "$lenguaje.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$lenguaje.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"日本語"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:10:12 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$tipo"
+	},
+	{
+		"$group": {
+			"_id": "$tipo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$tipo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Doujinshi"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:10:31 [info]: GetCountGroupAgregatePaginate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$regex": "^([0-9.-])"
+			}
+		}
+	}
+]
+2024-08-20 00:10:39 [info]: GetCountGroupAgregatePaginate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$regex": "^([Aa])"
+			}
+		}
+	}
+]
+2024-08-20 00:11:07 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$artistas"
+	},
+	{
+		"$group": {
+			"_id": "$artistas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$artistas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"0-G"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:11:07 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$personajes"
+	},
+	{
+		"$group": {
+			"_id": "$personajes.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$personajes.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Chino Kafuu",
+					"Rize Tedeza",
+					"Sharo Kirima"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:11:07 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Anal",
+					"C90",
+					"Females Only",
+					"Loli",
+					"Masturbation",
+					"Voyeurism",
+					"Yuri"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:11:07 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$series"
+	},
+	{
+		"$group": {
+			"_id": "$series.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$series.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Gochuumon Wa Usagi Desu Ka"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:11:07 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$grupo"
+	},
+	{
+		"$group": {
+			"_id": "$grupo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$grupo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Pettanko"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:11:07 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$lenguaje"
+	},
+	{
+		"$group": {
+			"_id": "$lenguaje.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$lenguaje.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"日本語"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:11:07 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$tipo"
+	},
+	{
+		"$group": {
+			"_id": "$tipo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$tipo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Doujinshi"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:16:51 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$artistas"
+	},
+	{
+		"$group": {
+			"_id": "$artistas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$artistas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"0bake"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:16:51 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$personajes"
+	},
+	{
+		"$group": {
+			"_id": "$personajes.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$personajes.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Reimu Hakurei",
+					"Youmu Konpaku"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:16:51 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Anal",
+					"Crossdressing",
+					"Gender Change",
+					"Kodomo Doushi",
+					"Kodomo Only",
+					"Males Only",
+					"Miko",
+					"Phimosis",
+					"Shota",
+					"Tomgirl",
+					"Uncensored",
+					"Yaoi"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:16:51 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$series"
+	},
+	{
+		"$group": {
+			"_id": "$series.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$series.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Touhou Project"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:16:51 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$grupo"
+	},
+	{
+		"$group": {
+			"_id": "$grupo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$grupo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"N/A"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:16:51 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$lenguaje"
+	},
+	{
+		"$group": {
+			"_id": "$lenguaje.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$lenguaje.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"日本語"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:16:51 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$tipo"
+	},
+	{
+		"$group": {
+			"_id": "$tipo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$tipo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Doujinshi"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:17:12 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$artistas"
+	},
+	{
+		"$group": {
+			"_id": "$artistas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$artistas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"0-G"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:17:12 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$personajes"
+	},
+	{
+		"$group": {
+			"_id": "$personajes.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$personajes.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Chino Kafuu",
+					"Rize Tedeza"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:17:12 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"C86",
+					"Loli",
+					"Masturbation",
+					"Sex Toys",
+					"Stockings"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:17:12 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$series"
+	},
+	{
+		"$group": {
+			"_id": "$series.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$series.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Gochuumon Wa Usagi Desu Ka"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:17:12 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$grupo"
+	},
+	{
+		"$group": {
+			"_id": "$grupo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$grupo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Pettanko"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:17:12 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$lenguaje"
+	},
+	{
+		"$group": {
+			"_id": "$lenguaje.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$lenguaje.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"日本語"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:17:12 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$tipo"
+	},
+	{
+		"$group": {
+			"_id": "$tipo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$tipo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Doujinshi"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:30:42 [info]: GetCountGroupAgregatePaginate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$regex": "^([0-9.-])"
+			}
+		}
+	}
+]
+2024-08-20 00:30:53 [info]: GetCountGroupAgregatePaginate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$regex": "^([Aa])"
+			}
+		}
+	}
+]
+2024-08-20 00:30:53 [info]: GetCountGroupAgregatePaginate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$regex": "^([Bb])"
+			}
+		}
+	}
+]
+2024-08-20 00:30:55 [info]: GetCountGroupAgregatePaginate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$regex": "^([Dd])"
+			}
+		}
+	}
+]
+2024-08-20 00:30:56 [info]: GetCountGroupAgregatePaginate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$regex": "^([Ff])"
+			}
+		}
+	}
+]
+2024-08-20 00:30:57 [info]: GetCountGroupAgregatePaginate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$regex": "^([Hh])"
+			}
+		}
+	}
+]
+2024-08-20 00:31:00 [info]: GetCountGroupAgregatePaginate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$regex": "^([Jj])"
+			}
+		}
+	}
+]
+2024-08-20 00:31:02 [info]: GetCountGroupAgregatePaginate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$regex": "^([Mm])"
+			}
+		}
+	}
+]
+2024-08-20 00:31:42 [info]: GetCountGroupAgregatePaginate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$regex": "^([Mm])"
+			}
+		}
+	}
+]
+2024-08-20 00:31:42 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$artistas"
+	},
+	{
+		"$group": {
+			"_id": "$artistas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$artistas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"0-G"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:42 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$personajes"
+	},
+	{
+		"$group": {
+			"_id": "$personajes.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$personajes.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Chino Kafuu",
+					"Rize Tedeza",
+					"Sharo Kirima"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:42 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Anal",
+					"C90",
+					"Females Only",
+					"Loli",
+					"Masturbation",
+					"Voyeurism",
+					"Yuri"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:42 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$series"
+	},
+	{
+		"$group": {
+			"_id": "$series.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$series.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Gochuumon Wa Usagi Desu Ka"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:42 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$artistas"
+	},
+	{
+		"$group": {
+			"_id": "$artistas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$artistas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"0-G"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:42 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$grupo"
+	},
+	{
+		"$group": {
+			"_id": "$grupo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$grupo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Pettanko"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:42 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$personajes"
+	},
+	{
+		"$group": {
+			"_id": "$personajes.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$personajes.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Chino Kafuu",
+					"Rize Tedeza"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:42 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$lenguaje"
+	},
+	{
+		"$group": {
+			"_id": "$lenguaje.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$lenguaje.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"日本語"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:42 [info]: GetCountGroupAgregatePaginate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$regex": "^([Mm])"
+			}
+		}
+	}
+]
+2024-08-20 00:31:42 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"C86",
+					"Loli",
+					"Masturbation",
+					"Sex Toys",
+					"Stockings"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:42 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$tipo"
+	},
+	{
+		"$group": {
+			"_id": "$tipo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$tipo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Doujinshi"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:42 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$series"
+	},
+	{
+		"$group": {
+			"_id": "$series.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$series.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Gochuumon Wa Usagi Desu Ka"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:43 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$grupo"
+	},
+	{
+		"$group": {
+			"_id": "$grupo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$grupo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Pettanko"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:43 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$lenguaje"
+	},
+	{
+		"$group": {
+			"_id": "$lenguaje.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$lenguaje.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"日本語"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:43 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$artistas"
+	},
+	{
+		"$group": {
+			"_id": "$artistas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$artistas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"0-G"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:43 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$tipo"
+	},
+	{
+		"$group": {
+			"_id": "$tipo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$tipo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Doujinshi"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:43 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$personajes"
+	},
+	{
+		"$group": {
+			"_id": "$personajes.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$personajes.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Chino Kafuu",
+					"Rize Tedeza",
+					"Sharo Kirima"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:43 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Anal",
+					"C90",
+					"Females Only",
+					"Loli",
+					"Masturbation",
+					"Voyeurism",
+					"Yuri"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:43 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$series"
+	},
+	{
+		"$group": {
+			"_id": "$series.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$series.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Gochuumon Wa Usagi Desu Ka"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:43 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$grupo"
+	},
+	{
+		"$group": {
+			"_id": "$grupo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$grupo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Pettanko"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:43 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$lenguaje"
+	},
+	{
+		"$group": {
+			"_id": "$lenguaje.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$lenguaje.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"日本語"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:43 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$tipo"
+	},
+	{
+		"$group": {
+			"_id": "$tipo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$tipo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Doujinshi"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:43 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$artistas"
+	},
+	{
+		"$group": {
+			"_id": "$artistas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$artistas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"0-G"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:43 [info]: GetCountGroupAgregatePaginate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$regex": "^([Mm])"
+			}
+		}
+	}
+]
+2024-08-20 00:31:43 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$personajes"
+	},
+	{
+		"$group": {
+			"_id": "$personajes.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$personajes.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Chino Kafuu",
+					"Rize Tedeza"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:43 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"C86",
+					"Loli",
+					"Masturbation",
+					"Sex Toys",
+					"Stockings"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:43 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$series"
+	},
+	{
+		"$group": {
+			"_id": "$series.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$series.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Gochuumon Wa Usagi Desu Ka"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:43 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$artistas"
+	},
+	{
+		"$group": {
+			"_id": "$artistas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$artistas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"0-G"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:43 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$grupo"
+	},
+	{
+		"$group": {
+			"_id": "$grupo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$grupo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Pettanko"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:43 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$lenguaje"
+	},
+	{
+		"$group": {
+			"_id": "$lenguaje.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$lenguaje.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"日本語"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:43 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$personajes"
+	},
+	{
+		"$group": {
+			"_id": "$personajes.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$personajes.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Chino Kafuu",
+					"Rize Tedeza",
+					"Sharo Kirima"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:43 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$tipo"
+	},
+	{
+		"$group": {
+			"_id": "$tipo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$tipo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Doujinshi"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:43 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Anal",
+					"C90",
+					"Females Only",
+					"Loli",
+					"Masturbation",
+					"Voyeurism",
+					"Yuri"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:43 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$series"
+	},
+	{
+		"$group": {
+			"_id": "$series.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$series.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Gochuumon Wa Usagi Desu Ka"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:43 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$artistas"
+	},
+	{
+		"$group": {
+			"_id": "$artistas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$artistas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"0-G"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:43 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$grupo"
+	},
+	{
+		"$group": {
+			"_id": "$grupo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$grupo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Pettanko"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:43 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$personajes"
+	},
+	{
+		"$group": {
+			"_id": "$personajes.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$personajes.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Chino Kafuu",
+					"Rize Tedeza"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:43 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$lenguaje"
+	},
+	{
+		"$group": {
+			"_id": "$lenguaje.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$lenguaje.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"日本語"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:43 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$etiquetas"
+	},
+	{
+		"$group": {
+			"_id": "$etiquetas.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$etiquetas.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"C86",
+					"Loli",
+					"Masturbation",
+					"Sex Toys",
+					"Stockings"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:43 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$tipo"
+	},
+	{
+		"$group": {
+			"_id": "$tipo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$tipo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Doujinshi"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:43 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$series"
+	},
+	{
+		"$group": {
+			"_id": "$series.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$series.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Gochuumon Wa Usagi Desu Ka"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:43 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$grupo"
+	},
+	{
+		"$group": {
+			"_id": "$grupo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$grupo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Pettanko"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:43 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$lenguaje"
+	},
+	{
+		"$group": {
+			"_id": "$lenguaje.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$lenguaje.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"日本語"
+				]
+			}
+		}
+	}
+]
+2024-08-20 00:31:43 [info]: GetCountGroupAgregate [
+	{
+		"$unwind": "$tipo"
+	},
+	{
+		"$group": {
+			"_id": "$tipo.nombre",
+			"count": {
+				"$sum": 1
+			},
+			"name": {
+				"$first": "$tipo.nombre"
+			}
+		}
+	},
+	{
+		"$sort": {
+			"name": 1
+		}
+	},
+	{
+		"$match": {
+			"name": {
+				"$in": [
+					"Doujinshi"
+				]
+			}
+		}
+	}
+]

@@ -28,7 +28,7 @@ export const Description = ({
     update
 }: DescriptionProps) => {
     return (
-        <div className="bg-gray-50 dark:bg-gray-900 items-center justify-center p-2">
+        <div className="bg-gray-50 dark:bg-neutral-900 items-center justify-center p-2">
             <div className="p-2">
                 <h4 className='dark:text-gray-50 text-gray-950 text-xl'>{title}</h4>
             </div>

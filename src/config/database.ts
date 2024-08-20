@@ -13,8 +13,10 @@ import { Personaje } from "../entities/personaje.entity";
 import { Tipo } from "../entities/tipo.entity";
 import 'dotenv/config'
 import { Group } from "@/entities/group.entity";
+import { locale } from "moment";
+import { browser } from "process";
 
-export const AppDataSource = new DataSource({
+const mongoConnect: DataSource = new DataSource({
     type: "mongodb",
     host: "localhost",
     port: 27017,
@@ -36,4 +38,15 @@ export const AppDataSource = new DataSource({
     ],
     subscribers: [],
     migrations: [],
+    extra: {
+        location: {
+            browser: false
+        }
+    }
 })
+export const getDBConnection = async (): Promise<DataSource> => {
+    if (!mongoConnect.isInitialized) {
+        await mongoConnect.initialize();
+    }
+    return mongoConnect;
+};
