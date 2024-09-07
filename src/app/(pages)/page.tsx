@@ -5,23 +5,29 @@ import { TitleGeneral } from "@/components/title-general/title-general";
 import { CardDescription } from "@/components/card-description/card-description";
 import 'dotenv/config';
 import { RepositoryObra } from '@/repository/repositoryObra';
-import { getDBConnection } from '@/config/database';
-
+import { connectToMongoDB } from '@/config/mongoose';
 
 export default async function PageHome({
     params,
     searchParams,
 }: {
-    params: { slug: string };
+    params: { name: string };
     searchParams: { page?: number };
 }) {
-    const connect = await getDBConnection();
-    const repositoryObra = new RepositoryObra(connect);
+    const repositoryObra = new RepositoryObra();
 
     const numberSaltPage = 25;
     const page = searchParams.page == undefined ? (1) : searchParams.page;
 
-    const { count, data } = await repositoryObra.Paginate(numberSaltPage, ((page - 1) * numberSaltPage));
+    await connectToMongoDB()
+
+    const { count, obras } = await repositoryObra.GetAllPageInit({
+        query: { 'grupo.nombre': 'paramName' },
+        sort: { 'fecha': 'desc' },
+        page: page,
+        take: numberSaltPage
+    })
+
 
     console.log(count)
     return (
@@ -42,7 +48,7 @@ export default async function PageHome({
             <div className="bg-gray-50 dark:bg-neutral-900 items-center justify-center p-2">
                 <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
                     {
-                        data.map((obra, i) =>
+                        obras.map((obra, i) =>
                             <CardDescription
                                 key={i}
                                 url={`/code/${obra.codigo}`}

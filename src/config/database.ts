@@ -2,7 +2,6 @@ import "reflect-metadata";
 
 import { DataSource } from "typeorm";
 import { Artista } from "../entities/artista.entity";
-import { PageArtista } from "../entities/pageArtista.entity";
 import { Serie } from "../entities/serie.entity";
 import { Etiqueta } from "../entities/etiqueta.entity";
 import { Grupo } from "../entities/grupo.entity";
@@ -12,9 +11,6 @@ import { Pagina } from "../entities/pagina.entity";
 import { Personaje } from "../entities/personaje.entity";
 import { Tipo } from "../entities/tipo.entity";
 import 'dotenv/config'
-import { Group } from "@/entities/group.entity";
-import { locale } from "moment";
-import { browser } from "process";
 
 const mongoConnect: DataSource = new DataSource({
     type: "mongodb",
@@ -25,7 +21,6 @@ const mongoConnect: DataSource = new DataSource({
     //logging: true,
     entities: [
         Artista,
-        PageArtista,
         Etiqueta,
         Grupo,
         Lenguaje,
@@ -34,7 +29,6 @@ const mongoConnect: DataSource = new DataSource({
         Personaje,
         Tipo,
         Serie,
-        Group
     ],
     subscribers: [],
     migrations: [],

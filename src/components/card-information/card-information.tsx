@@ -2,6 +2,7 @@ import React from 'react'
 import { TagInformation, TagInformationProps } from '../tag/tag-information'
 import { Description } from './components/description'
 import { CardImagen } from './components/card-imagen'
+import { IGroupPerName } from '@/models/groupPerName'
 
 export interface CardInformationProps {
     title: string
@@ -10,13 +11,13 @@ export interface CardInformationProps {
     update: string
     urlImagen: string
     url: string
-    character?: TagInformationProps[]
-    tags?: TagInformationProps[]
-    series?: TagInformationProps[]
-    languaje?: TagInformationProps[]
-    category?: TagInformationProps[]
-    artists?: TagInformationProps[]
-    group?: TagInformationProps[]
+    character?: IGroupPerName[]
+    tags?: IGroupPerName[]
+    series?: IGroupPerName[]
+    languaje?: IGroupPerName[]
+    category?: IGroupPerName[]
+    artists?: IGroupPerName[]
+    group?: IGroupPerName[]
 
 }
 export const CardInformation = ({

@@ -9,7 +9,7 @@ import { Etiqueta } from "./etiqueta.entity";
 import { Artista } from "./artista.entity";
 
 @Entity({ name: 'obra' })
-export class Obra extends BaseEntity {
+export class Obra {
     @ObjectIdColumn()
     id?: ObjectId;
 
@@ -37,7 +37,7 @@ export class Obra extends BaseEntity {
     @Column()
     url_scraping: string;
 
-    @Column((type) => Artista)
+    @Column((type) => Personaje, { array: true })//
     artistas: Artista[];
 
     @Column((type) => Personaje)

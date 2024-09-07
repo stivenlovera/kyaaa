@@ -1,5 +1,6 @@
 import { CardInformation } from "@/components/card-information/card-information";
 import { getDBConnection } from "@/config/database";
+import { connectToMongoDB } from "@/config/mongoose";
 import { RepositoryObra } from "@/repository/repositoryObra";
 import Link from "next/link";
 
@@ -10,142 +11,38 @@ export default async function CodePage({
   params: { code: string };
   searchParams: { page: string };
 }) {
-  const connect = await getDBConnection();
+  await connectToMongoDB()
 
-  const repositoryObra = new RepositoryObra(connect);
-  const obra = await repositoryObra.GetOne(params.code);
+  const repositoryObra = new RepositoryObra();
+  const obra = await repositoryObra.GetOne({ codigo: params.code });
+  console.log('personajes',obra!.personajes)
 
   const groupArtists = obra!.artistas.map((artist) => artist.nombre)
-  const artists = await repositoryObra.GetCountGroupAgregate(repositoryObra.CreateAgregation({
-    entity: 'artistas',
-    field: 'nombre',
-    order: 1,
-    match: {
-      name: {
-        $in: groupArtists
-      }
-    }
-  }));
-  const artistasCount = artists.map((artists) => {
-    return {
-      value: artists.name,
-      quantity: artists.count,
-      url: '#'
-    }
-  });
+  const aggregateArtists = repositoryObra.agreggateGroupArtist(groupArtists)
+  const artists = await repositoryObra.GetGroup({ aggregate: aggregateArtists });
 
-  const groupCharacters = obra!.personajes.map((character) => character.nombre)
-  const characters = await repositoryObra.GetCountGroupAgregate(repositoryObra.CreateAgregation(
-    {
-      entity: 'personajes',
-      field: 'nombre',
-      order: 1,
-      match: {
-        name: {
-          $in: groupCharacters
-        }
-      }
-    }));
-  const charactersCount = characters.map((character) => {
-    return {
-      quantity: character.count,
-      url: '#',
-      value: character.name
-    }
-  })
+  const groupCharacters = obra!.personajes.map((personaje) => personaje.nombre)
+  const aggregateCharacter = repositoryObra.agreggateGroupCharacter(groupCharacters)
+  const characters = await repositoryObra.GetGroup({ aggregate: aggregateCharacter });
 
-  const groupTags = obra!.etiquetas.map((tag) => tag.nombre)
-  const tags = await repositoryObra.GetCountGroupAgregate(repositoryObra.CreateAgregation({
-    entity: 'etiquetas',
-    field: 'nombre',
-    order: 1,
-    match: {
-      name: {
-        $in: groupTags
-      }
-    }
-  }));
-  const tagsCount = tags.map((tag) => {
-    return {
-      quantity: tag.count,
-      url: '#',
-      value: tag.name
-    }
-  })
+  const groupTags = obra!.etiquetas.map((etiqueta) => etiqueta.nombre)
+  const aggregateTag = repositoryObra.agreggateGroupTag(groupTags)
+  const tags = await repositoryObra.GetGroup({ aggregate: aggregateTag });
 
   const groupSeries = obra!.series.map((serie) => serie.nombre)
-  const series = await repositoryObra.GetCountGroupAgregate(repositoryObra.CreateAgregation({
-    entity: 'series',
-    field: 'nombre',
-    order: 1,
-    match: {
-      name: {
-        $in: groupSeries
-      }
-    }
-  }));
-  const seriesCount = series.map((serie) => {
-    return {
-      quantity: serie.count,
-      url: '#',
-      value: serie.name
-    }
-  })
+  const aggregateSeries = repositoryObra.agreggateGroupSerie(groupSeries)
+  const series = await repositoryObra.GetGroup({ aggregate: aggregateSeries });
 
-  const groups = await repositoryObra.GetCountGroupAgregate(repositoryObra.CreateAgregation({
-    entity: 'grupo',
-    field: 'nombre',
-    order: 1,
-    match: {
-      name: {
-        $in: [obra!.grupo.nombre]
-      }
-    }
-  }));
-  const groupsCount = groups.map((group) => {
-    return {
-      quantity: group.count,
-      url: '#',
-      value: group.name
-    }
-  })
+  const aggregateGroup = repositoryObra.agreggateGroupGroup([obra!.grupo.nombre])
+  const group = await repositoryObra.GetGroup({ aggregate: aggregateGroup });
 
-  const languages = await repositoryObra.GetCountGroupAgregate(repositoryObra.CreateAgregation({
-    entity: 'lenguaje',
-    field: 'nombre',
-    order: 1,
-    match: {
-      name: {
-        $in: [obra!.lenguaje.nombre]
-      }
-    }
-  }));
-  const languageCount = languages.map((language) => {
-    return {
-      quantity: language.count,
-      url: '#',
-      value: language.name
-    }
-  })
+  console.log('aggregateGroup', JSON.stringify(aggregateGroup, null, "\t"))
+  
+  const aggregateLanguage = repositoryObra.agreggateGroupLanguage([obra!.lenguaje.nombre])
+  const languaje = await repositoryObra.GetGroup({ aggregate: aggregateLanguage });
 
-  const types = await repositoryObra.GetCountGroupAgregate(repositoryObra.CreateAgregation({
-    entity: 'tipo',
-    field: 'nombre',
-    order: 1,
-    match: {
-      name: {
-        $in: [obra!.tipo.nombre]
-      }
-    }
-  }));
-  const typesCount = types.map((type) => {
-    return {
-      quantity: type.count,
-      url: '#',
-      value: type.name
-    }
-  })
-
+  const aggregateCategory = repositoryObra.agreggateGroupLanguage([obra!.tipo.nombre])
+  const type = await repositoryObra.GetGroup({ aggregate: aggregateCategory });
 
   return (
     <>
@@ -157,13 +54,13 @@ export default async function CodePage({
           title={obra!.nombre}
           update={obra!.fecha.toISOString()}
           pages={obra!.numero_pagina}
-          artists={artistasCount}
-          tags={tagsCount}
-          category={typesCount}
-          character={charactersCount}
-          group={groupsCount}
-          languaje={languageCount}
-          series={seriesCount}
+          artists={artists}
+          tags={tags}
+          category={type}
+          character={characters}
+          group={group}
+          languaje={languaje}
+          series={series}
         />
       </div>
       <br />

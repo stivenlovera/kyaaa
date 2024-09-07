@@ -1,92 +1,66 @@
 
 import { logger } from "@/config/logger";
 import { Obra } from "@/entities/obra.entity";
-import { convertJson } from "@/utils/convertes";
-import { MongoClient } from "mongodb";
-import { DataSource, ObjectLiteral } from "typeorm";
+import { IGroupPerName } from "@/models/groupPerName";
+import { IObra, modelObra } from "@/models/obra";
+import { FilterQuery, PipelineStage, SortOrder } from "mongoose";
 
-type Paginate = {
-    data: Obra[]
-    count: number
-}
 type CreateAgregationProps = {
     entity: string
     field: string
-    order: number
-    match?: ObjectLiteral
+    order: 1 | -1
+    match?: FilterQuery<any>
     skip?: number
 }
 export class RepositoryObra {
-    dataSource: DataSource;
-
-    constructor(_dataSource: DataSource) {
-        this.dataSource = _dataSource
+    abc(): string[] {
+        return [
+            '123', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+        ]
     }
-
-    async GetPaginate(etiqueta: string, entity: string, take: number, skip: number): Promise<Paginate> {
-        const [result, total] = await this.dataSource.getRepository(Obra).findAndCount(
-            {
-                where: {
-                    'etiquetas': {
-                        nombre: etiqueta
-                    }
-                },
-                take: take,
-                skip: skip
-            }
-        );
-        return {
-            data: result,
-            count: total,
-        }
-    }
-
-    async GetOne(code: string): Promise<Obra | null> {
-        const obra = await this.dataSource.getRepository(Obra).findOne(
-            {
-                where: {
-                    codigo: code
-                }
-            }
-        );
+    async GetOne({ codigo }: { codigo: string }): Promise<IObra | null> {
+        const obra = await modelObra.findOne<IObra>({
+            codigo: codigo
+        });
         return obra;
     }
- 
-    async Paginate(take: number, skip: number): Promise<Paginate> {
-        const [result, total] = await this.dataSource.getRepository(Obra).findAndCount(
-            {
-                where: {
-                    //fecha:Between(moment('2021-03-08').startOf('day').toDate(),moment('2021-12-08').startOf('day').toDate())
-                },
-                //order: { fecha: "ASC" },
-                take: take,
-                skip: skip
-            }
-        );
-        
+    async GetAllPageInit({ query, sort, page, take }: GetAllNameProps<Obra>) {
+        const { docs, totalDocs } = await modelObra.find<IObra>({
+            fecha: { $gte: new Date("2023-02-01T00:00:00"), $lte: new Date("2023-03-30T00:00:00") }
+        }).paginate({ limit: take, page: page, sort });
         return {
-            data: result,
-            count: total,
+            count: totalDocs,
+            obras: docs
         }
     }
-
-    async GetCountGroupAgregate(agregate: ObjectLiteral[]): Promise<Obra[]> {
-        logger.info(`GetCountGroupAgregate ${convertJson(agregate)}`)
-        const obras = await this.dataSource.getMongoRepository(Obra).aggregate(agregate).toArray();
-        return obras;
-    }
-
-    async GetCountGroupAgregatePaginate(agregate: ObjectLiteral[]): Promise<Paginate> {
-        logger.info(`GetCountGroupAgregatePaginate ${convertJson(agregate)}`)
-        const obras = await this.dataSource.getMongoRepository(Obra).aggregate(agregate).toArray();
+    async GetAll({ query, sort, page, take }: GetAllNameProps<Obra>) {
+        const { docs, totalDocs } = await modelObra.find<IObra>(query).paginate({ limit: take, page: page, sort });
         return {
-            data: obras,
+            count: totalDocs,
+            obras: docs
+        }
+    }
+    async GetAllPaginate({ query, sort, page, take }: GetAllNameProps<Obra>) {
+        const { docs, totalDocs } = await modelObra.find<IObra>(query)/* .sort(sort).skip(skip).limit(take) */.paginate({ limit: take, page: page, sort });
+        return {
+            count: totalDocs,
+            obras: docs
+        }
+    }
+    async GetGroupPaginate({ aggregate, sort }: GetGroupPaginateProps) {
+        const obras = await modelObra.aggregate<IGroupPerName>(aggregate);
+        return {
             count: obras.length,
+            obras
         }
     }
+    async GetGroup({ aggregate }: { aggregate: PipelineStage[] }): Promise<IGroupPerName[]> {
 
-    CreateAgregation({ entity, field, order, match, skip }: CreateAgregationProps): ObjectLiteral[] {
-        let pipeline: ObjectLiteral[] = [
+        const grupos = await modelObra.aggregate<IGroupPerName>(aggregate);
+        return grupos;
+    }
+    agregation({ entity, field, order, match, skip }: CreateAgregationProps): PipelineStage[] {
+        let pipeline: PipelineStage[] = [
             {
                 $unwind: `$${entity}`
             },
@@ -103,7 +77,7 @@ export class RepositoryObra {
             },
             {
                 $sort: {
-                    name: order
+                    name: 1
                 }
             }
         ];
@@ -117,14 +91,166 @@ export class RepositoryObra {
                 $skip: skip
             })
         }
-
         return pipeline;
     }
 
-    abc(): string[] {
-        return [
-            '123', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
-        ]
+    public agreggateArtist = (match: string) => this.agregation({
+        entity: 'artistas',
+        field: 'nombre',
+        order: 1,
+        match: {
+            name: {
+                $regex: match
+            }
+        }
+    })
+    public agreggateCharacter = (match: string) => this.agregation({
+        entity: 'personajes',
+        field: 'nombre',
+        order: 1,
+        match: {
+            name: {
+                $regex: match
+            }
+        }
+    })
+    public agreggateTag = (match: string) => this.agregation({
+        entity: 'etiquetas',
+        field: 'nombre',
+        order: 1,
+        match: {
+            name: {
+                $regex: match
+            }
+        }
+    })
+    public agreggateSerie = (match: string) => this.agregation({
+        entity: 'series',
+        field: 'nombre',
+        order: 1,
+        match: {
+            name: {
+                $regex: match
+            }
+        }
+    })
+    public agreggateGroup = (match: string) => this.agregation({
+        entity: 'grupo',
+        field: 'nombre',
+        order: 1,
+        match: {
+            name: {
+                $regex: match
+            }
+        }
+    })
+    public agreggateLanguage = () => this.agregation({
+        entity: 'lenguaje',
+        field: 'nombre',
+        order: 1
+    })
+
+    public agreggateCategory = () => this.agregation({
+        entity: 'tipo',
+        field: 'nombre',
+        order: 1
+    })
+    public agreggateGroupCategory = (match: string[]) => this.agregation({
+        entity: 'tipo',
+        field: 'nombre',
+        order: 1,
+        match: {
+            name: {
+                $in: match
+            }
+        }
+    })
+    public agreggateGroupLanguage = (match: string[]) => this.agregation({
+        entity: 'lenguaje',
+        field: 'nombre',
+        order: 1,
+        match: {
+            name: {
+                $in: match
+            }
+        }
+    })
+    public agreggateGroupGroup = (match: string[]) => {
+        return this.agregation({
+            entity: 'grupo',
+            field: 'nombre',
+            order: 1,
+            match: {
+                name: {
+                    $in: match
+                }
+            }
+        })
+    }
+    public agreggateGroupSerie = (match: string[]) => {
+        return this.agregation({
+            entity: 'series',
+            field: 'nombre',
+            order: 1,
+            match: {
+                name: {
+                    $in: match
+                }
+            }
+        })
+    }
+    public agreggateGroupTag = (match: string[]) => {
+        return this.agregation({
+            entity: 'etiquetas',
+            field: 'nombre',
+            order: 1,
+            match: {
+                name: {
+                    $in: match
+                }
+            }
+        })
+    }
+    public agreggateGroupCharacter = (match: string[]) => {
+        return this.agregation({
+            entity: 'personajes',
+            field: 'nombre',
+            order: 1,
+            match: {
+                name: {
+                    $in: match
+                }
+            }
+        })
+    }
+    public agreggateGroupArtist = (match: string[]) => {
+        return this.agregation({
+            entity: 'artistas',
+            field: 'nombre',
+            order: 1,
+            match: {
+                name: {
+                    $in: match
+                }
+            }
+        })
     }
 }
-
+type GetAllNameProps<T> = {
+    query: FilterQuery<T>
+    sort?: {
+        [key: string]: SortOrder | {
+            $meta: any;
+        };
+    }
+    page: number
+    take: number
+}
+type GetGroupPaginateProps = {
+    aggregate: PipelineStage[]
+    sort?: {
+        [key: string]: SortOrder | {
+            $meta: any;
+        };
+    }
+}

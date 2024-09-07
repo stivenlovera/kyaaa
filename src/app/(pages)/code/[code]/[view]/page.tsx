@@ -2,17 +2,17 @@ import { PaginationView } from "@/components/pagination/pagination-view";
 import { View } from "@/components/view/view";
 import Custom404 from "./404";
 import Link from "next/link";
-import { getDBConnection } from "@/config/database";
 import { RepositoryObra } from "@/repository/repositoryObra";
+import { connectToMongoDB } from "@/config/mongoose";
 
 export default async function ViewPage({ params }:
     {
         params: { code: string, view: number }
     }) {
-    const connect = await getDBConnection();
-    const repositoryObra = new RepositoryObra(connect);
+    await connectToMongoDB()
+    const repositoryObra = new RepositoryObra();
 
-    const obra = await repositoryObra.GetOne(params.code);
+    const obra = await repositoryObra.GetOne({ codigo: params.code });
     const pagina = obra?.paginas.find((pag) =>
         pag.numero == params.view
     )
@@ -22,7 +22,7 @@ export default async function ViewPage({ params }:
     }
     const paginas = obra?.paginas.map((pag) => pag.numero)
 
-    
+
     return (
         <div className="dark:bg-neutral-900 grid grid-cols-1">
             <div className="grid">

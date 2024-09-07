@@ -1,28 +1,31 @@
 import { TitleGeneral } from "@/components/title-general/title-general";
 import { AllPage, Pagination } from "@/components/pagination/pagination";
 import { CardDescription } from "@/components/card-description/card-description";
-
 import { RepositoryObra } from "@/repository/repositoryObra";
-import { getDBConnection } from "@/config/database";
+import { connectToMongoDB } from "@/config/mongoose";
+import { deserializeSlug } from "@/utils/convertes";
 
-export default async function EtiquetaPage({
+export default async function TagNamePage({
     params,
     searchParams,
 }: {
     params: { name: string }
     searchParams: { page?: number };
 }) {
-    const connect = await getDBConnection();
-    const repositoryObra = new RepositoryObra(connect);
+    await connectToMongoDB();
+    const repositoryObra = new RepositoryObra();
 
-    const paramName = params.name.replace(/-/g, ' ');
-
+    const paramName = deserializeSlug(params.name);
     const numberSaltPage = 25;
     const page = searchParams.page == undefined ? (1) : searchParams.page;
 
-    const { count, data } = await repositoryObra.GetPaginate(paramName, 'etiquetas', numberSaltPage, ((page - 1) * numberSaltPage));
+    const { count, obras } = await repositoryObra.GetAllPaginate({
+        query: { 'etiquetas.nombre': paramName },
+        sort: { 'fecha': 'desc' },
+        page: page,
+        take: numberSaltPage
+    })
 
-    
     return (
         <>
             <div className="grid grid-cols-1 gap-4">
@@ -42,7 +45,7 @@ export default async function EtiquetaPage({
             <div className="bg-gray-50 dark:bg-neutral-900 items-center justify-center p-2">
                 <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
                     {
-                        data?.map((book, i) => {
+                        obras?.map((book, i) => {
                             return (
                                 <CardDescription
                                     key={i}

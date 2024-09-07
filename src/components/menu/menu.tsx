@@ -10,11 +10,11 @@ export interface ListMenu {
 const menu: ListMenu[] = [
     {
         name: 'Etiquetas',
-        url: '/etiqueta'
+        url: '/tag'
     },
     {
         name: 'Artistas',
-        url: '/artista'
+        url: '/artist'
     },
     {
         name: 'Serie',
@@ -22,15 +22,19 @@ const menu: ListMenu[] = [
     },
     {
         name: 'Personajes',
-        url: '/pesonaje'
+        url: '/character'
+    },
+    {
+        name: 'Grupo',
+        url: '/group'
     },
     {
         name: 'Idioma',
-        url: '/idioma'
+        url: '/language'
     },
     {
         name: 'Categoria',
-        url: '/categoria'
+        url: '/category'
     },
     /* {
         name: 'Favoritos',

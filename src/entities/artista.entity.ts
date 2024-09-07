@@ -1,10 +1,13 @@
 
-import { Entity, Column, PrimaryGeneratedColumn, BaseEntity, OneToMany, JoinTable, JoinColumn, ObjectIdColumn, ObjectId } from "typeorm";
+import { Entity, Column, PrimaryGeneratedColumn, BaseEntity, ObjectIdColumn, ObjectId } from "typeorm";
 
-@Entity()
 export class Artista {
-    @ObjectIdColumn()
-    id?: ObjectId;
+
+    constructor(nombre: string, href: string, cantidad: number) {
+        this.nombre = nombre
+        this.href = href
+        this.cantidad = cantidad
+    }
 
     @Column()
     nombre: string;
@@ -14,10 +17,4 @@ export class Artista {
 
     @Column()
     cantidad: number;
-
-    constructor(nombre: string, href: string, cantidad: number) {
-        this.nombre = nombre
-        this.href = href
-        this.cantidad = cantidad
-    }
 }
