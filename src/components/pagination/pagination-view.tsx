@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Link from 'next/link'
+import { Link } from '@/i18n/routing';
 import React from 'react'
 import {
     faAnglesLeft,
@@ -8,13 +8,15 @@ import {
     faAnglesRight
 } from "@fortawesome/free-solid-svg-icons";
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { getTranslations } from 'next-intl/server';
 export interface PaginationProps {
     allPages: number[]
     page: number
     code: string
 }
 
-export const PaginationView = ({ page, allPages, code }: PaginationProps) => {
+export const PaginationView = async ({ page, allPages, code }: PaginationProps) => {
+    const t = await getTranslations('View');
     return (<>
         <div className='flex mx-auto flex-wrap items-center justify-center p-2'>
             <SectionPaginationInit
@@ -28,7 +30,7 @@ export const PaginationView = ({ page, allPages, code }: PaginationProps) => {
             <div
                 className={`flex items-center justify-center px-2 m-1 rounded-full`}
             >
-                <p className='text-center pr-3'>{page}</p> de <p className='text-center pl-3'>{allPages.length}</p>
+                <p className='text-center pr-3'>{page}</p> {t('paginate')} <p className='text-center pl-3'>{allPages.length}</p>
             </div>
             <SectionPaginationFinalize
                 pageFirst={`${page + 1}`}

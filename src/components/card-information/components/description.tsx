@@ -1,7 +1,8 @@
-import { TagInformation, TagInformationProps } from '@/components/tag/tag-information'
 import React from 'react'
 import { CardSection } from './card-section'
 import { IGroupPerName } from '@/models/groupPerName'
+import { getTranslations } from 'next-intl/server'
+import moment from 'moment'
 
 export interface DescriptionProps {
     title: string
@@ -16,7 +17,7 @@ export interface DescriptionProps {
     pages?: number
     update: string
 }
-export const Description = ({
+export const Description = async ({
     title,
     code,
     character,
@@ -29,53 +30,54 @@ export const Description = ({
     pages,
     update
 }: DescriptionProps) => {
+    const t = await getTranslations('Code');
     return (
         <div className="bg-gray-50 dark:bg-neutral-900 items-center justify-center p-2">
             <div className="p-2">
-                <h4 className='dark:text-gray-50 text-gray-950 text-xl'>{title}</h4>
+                <h4 className='dark:text-gray-50 text-gray-950 text-2xl'>{title}</h4>
             </div>
             <div className="p-2">
-                <h4 className='dark:text-gray-50 text-gray-950 text-xl'>{code}</h4>
+                <h5 className='dark:text-gray-50 text-gray-950 text-xl'>{code}</h5>
             </div>
             <CardSection
                 datos={series!}
-                nameSection='Series'
+                nameSection={t('series')}
                 route='serie'
             />
             <CardSection
                 datos={character!}
-                nameSection='Personajes'
+                nameSection={t('characters')}
                 route='character'
             />
             <CardSection
                 datos={tags!}
-                nameSection='Etiquetas'
+                nameSection={t('tags')}
                 route='tag'
             />
-             <CardSection
+            <CardSection
                 datos={artists!}
-                nameSection='Artistas'
+                nameSection={t('artists')}
                 route='artist'
             />
-           <CardSection
+            <CardSection
                 datos={group!}
-                nameSection='Grupos'
+                nameSection={t('group')}
                 route='group'
             />
-           <CardSection
+            <CardSection
                 datos={languaje!}
-                nameSection='Idioma'
+                nameSection={t('language')}
                 route='language'
             />
-           <CardSection
+            <CardSection
                 datos={category!}
-                nameSection='Categoria'
+                nameSection={t('category')}
                 route='category'
             />
             <div className="p-1">
                 <div className="flex mx-auto flex-wrap">
                     <div className="m-1">
-                        <h5 className="text-md text-gray-950 dark:text-gray-50">Paginas:</h5>
+                        <h5 className="text-md text-gray-950 dark:text-gray-50">{t('pages')}</h5>
                     </div>
                     <div className="m-2">
                         <h5 className="text-sm text-md text-gray-950 dark:text-gray-50">{pages}</h5>
@@ -85,10 +87,10 @@ export const Description = ({
             <div className="p-1">
                 <div className="flex mx-auto flex-wrap">
                     <div className="m-1">
-                        <h5 className="text-md text-gray-950 dark:text-gray-50">Actualizado:</h5>
+                        <h5 className="text-md text-gray-950 dark:text-gray-50">{t('update')}</h5>
                     </div>
                     <div className="m-2">
-                        <h5 className="text-sm text-md text-gray-950 dark:text-gray-50">{update}</h5>
+                        <h5 className="text-sm text-md text-gray-950 dark:text-gray-50">{moment(update).format('DD/MM/yyyy hh:mm')}</h5>
                     </div>
                 </div>
             </div>

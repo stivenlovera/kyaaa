@@ -1,6 +1,5 @@
 
 import { logger } from "@/config/logger";
-import { Obra } from "@/entities/obra.entity";
 import { IGroupPerName } from "@/models/groupPerName";
 import { IObra, modelObra } from "@/models/obra";
 import { FilterQuery, PipelineStage, SortOrder } from "mongoose";
@@ -24,7 +23,7 @@ export class RepositoryObra {
         });
         return obra;
     }
-    async GetAllPageInit({ query, sort, page, take }: GetAllNameProps<Obra>) {
+    async GetAllPageInit({ query, sort, page, take }: GetAllNameProps<IObra>) {
         const { docs, totalDocs } = await modelObra.find<IObra>({
             fecha: { $gte: new Date("2023-02-01T00:00:00"), $lte: new Date("2023-03-30T00:00:00") }
         }).paginate({ limit: take, page: page, sort });
@@ -33,14 +32,14 @@ export class RepositoryObra {
             obras: docs
         }
     }
-    async GetAll({ query, sort, page, take }: GetAllNameProps<Obra>) {
+    async GetAll({ query, sort, page, take }: GetAllNameProps<IObra>) {
         const { docs, totalDocs } = await modelObra.find<IObra>(query).paginate({ limit: take, page: page, sort });
         return {
             count: totalDocs,
             obras: docs
         }
     }
-    async GetAllPaginate({ query, sort, page, take }: GetAllNameProps<Obra>) {
+    async GetAllPaginate({ query, sort, page, take }: GetAllNameProps<IObra>) {
         const { docs, totalDocs } = await modelObra.find<IObra>(query)/* .sort(sort).skip(skip).limit(take) */.paginate({ limit: take, page: page, sort });
         return {
             count: totalDocs,

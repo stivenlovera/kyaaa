@@ -11,7 +11,7 @@ import {
     faSun,
 } from "@fortawesome/free-regular-svg-icons";
 import { Search } from './search';
-import Link from 'next/link';
+import {Link} from '@/i18n/routing';;
 import { ListMenu } from '../menu';
 
 interface NavProps {

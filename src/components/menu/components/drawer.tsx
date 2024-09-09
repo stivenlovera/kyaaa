@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import { ListMenu } from '../menu'
-import Link from 'next/link'
+import {Link} from '@/i18n/routing';
 interface DrawerProps {
     open: boolean
     onPress: () => void

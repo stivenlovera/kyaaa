@@ -1,5 +1,5 @@
 'use client'
-import Link from 'next/link'
+import {Link} from '@/i18n/routing';
 import { redirect } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import useWindowSize from "@rooks/use-window-size"

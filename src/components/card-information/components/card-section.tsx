@@ -1,6 +1,7 @@
 import { TagInformation, TagInformationProps } from '@/components/tag/tag-information'
 import { IGroupPerName } from '@/models/groupPerName'
 import { serializeSlug } from '@/utils/convertes'
+import { languajeToSpanish } from '@/utils/traslate-force'
 import React from 'react'
 interface CardSectionProps {
     datos: IGroupPerName[]
@@ -18,13 +19,14 @@ export const CardSection = ({ datos, nameSection, route }: CardSectionProps) => 
                         </div>
                         {
                             datos?.map((val, i) => {
+                                const traslate = languajeToSpanish(val.name)
                                 return (
                                     <div
                                         key={i}
                                         className="m-1">
                                         <TagInformation
                                             quantity={val.count}
-                                            url={`/${route}/${serializeSlug(val.name)}`}
+                                            url={`/${route}/${serializeSlug(traslate)}`}
                                             value={val.name}
                                         />
                                     </div>
