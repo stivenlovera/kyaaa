@@ -5,6 +5,7 @@ import "../globals.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
+import { logger } from "@/config/logger";
 
 config.autoAddCss = false;
 const inter = Inter({ subsets: ["latin"] });
@@ -15,18 +16,27 @@ export const metadata: Metadata = {
 };
 
 interface LayoutProps {
-    children: React.ReactNode
+    children: React.ReactNode;
     params: {
-        locale: string
-    }
+        locale: string;
+    };
 }
-export default async function Layout({ children, params: { locale } }: LayoutProps) {
+export default async function Layout({
+    children,
+    params: { locale },
+}: LayoutProps) {
+
+    logger.info(`Init Web`);
+
     const messages = await getMessages();
     return (
         <html lang={locale} className="dark">
             <body className={`${inter.className} `}>
                 <Menu />
-                <div className="md:mx-auto p-4 2xl:pl-60 2xl:pr-60 bg-white dark:bg-neutral-950" style={{ minHeight: '100vh' }}>
+                <div
+                    className="md:mx-auto p-4 2xl:pl-60 2xl:pr-60 bg-white dark:bg-neutral-950"
+                    style={{ minHeight: "100vh" }}
+                >
                     <NextIntlClientProvider messages={messages}>
                         {children}
                     </NextIntlClientProvider>

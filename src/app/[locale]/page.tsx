@@ -7,6 +7,7 @@ import 'dotenv/config';
 import { RepositoryObra } from '@/repository/repositoryObra';
 import { connectToMongoDB } from '@/config/mongoose';
 import { getTranslations } from 'next-intl/server';
+import { logger } from '@/config/logger';
 
 export default async function PageHome({
     params,
@@ -29,7 +30,6 @@ export default async function PageHome({
         page: page,
         take: numberSaltPage
     })
-
 
     console.log(count)
     return (

@@ -2,6 +2,7 @@ import { CardInformation } from "@/components/card-information/card-information"
 import { connectToMongoDB } from "@/config/mongoose";
 import { RepositoryObra } from "@/repository/repositoryObra";
 import {Link} from '@/i18n/routing';
+import { logger } from "@/config/logger";
 
 export default async function CodePage({
   params,
@@ -11,7 +12,6 @@ export default async function CodePage({
   searchParams: { page: string };
 }) {
   await connectToMongoDB()
-
   const repositoryObra = new RepositoryObra();
   const obra = await repositoryObra.GetOne({ codigo: params.code });
   console.log('personajes',obra!.personajes)
